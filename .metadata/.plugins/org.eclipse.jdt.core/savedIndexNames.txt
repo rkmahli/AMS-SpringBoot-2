@@ -1,0 +1,2 @@
+INDEX VERSION 1.131+C:\Users\h p\Desktop\AMS Project\.metadata\.plugins\org.eclipse.jdt.core
+130049657.index
