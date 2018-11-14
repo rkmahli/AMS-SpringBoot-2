@@ -12,6 +12,9 @@
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" media="all" href="node_modules/bootstrap/dist/css/Slate.css" />
     <script src="addlicence.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
+
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
@@ -28,13 +31,16 @@
             ::-webkit-scrollbar { 
     display: none; 
 }
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
 .footer-div {
             height: 5vh;
             padding: 0;
             margin: 0;
-
-
-
         }
 
         .table {
@@ -125,10 +131,10 @@ body {
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <img src="./Images/log.png" height="100">
-        <a fontsize=11 href="AgentRegistration.html">Agent Registration</a>
-        <a href="CalculateCommission.html">Calculate Commission</a>
-        <a href="MangeLicences.html">Manage Licences</a>
-        <a href="CustomerPolicyRegistration.html">Customer Policy Registration</a>
+        <a fontsize=11 href="AgentRegistration.html"> <i class="fas fa-user"></i> Agent Registration</a>
+        <a href="CalculateCommission.html"><i class="fas fa-money-bill"></i> Calculate Commission</a>
+        <a href="MangeLicences.html"><i class="fas fa-wrench"></i> Manage Licences</a>
+        <a href="CustomerPolicyRegistration.html"><i class="fas fa-scroll"></i> Customer Policy Registration</a>
     </div>
     <script>
         function openNav() {
@@ -277,9 +283,24 @@ body {
 
                 <!-- Modal body -->
                 <div class="modal-body">
-                    Agent Management System (AMS) is used for insurance agent maintenance, license management,
-                    scheduling customer appointmentsfor Insurance policies and agent commission calculation for an
-                    insurance consultant.
+                    <center>
+                        <p>
+                            This independent application, Agent Management System (AMS) website is used for insurance
+                            agent maintenance, license management, scheduling customer appointments for Insurance
+                            policies and agent commission calculation for an insurance consultant. </p>
+                    </center>
+                    <hr />
+                    <p>AMS is a system used for maintaining the details of the Insurance agent like adding the agents,
+                        managing the license that has been provided, to schedule customer appointments to know about
+                        the Insurance policies, to calculate the commission for each and every insurance agent. The
+                        following are the few important modules in the system
+
+                        <br /> a) Agent Addition
+                        <br /> b) License Management
+                        <br /> c) Customer Appointments
+                        <br /> d) Customer Policy Registration
+                        <br /> e) Agent commission.</p>
+
                 </div>
 
                 <!-- Modal footer -->
@@ -305,8 +326,37 @@ body {
 
                 <!-- Modal body -->
                 <div class="modal-body">
-                    Raj Kishore Mahli : +918158035053<br>Akash Nair:+917720048849<br>Manish Kumar :+918504826808<br>Manish
-                    Golla :+918019267367
+                    <table class="table table-danger table-hover">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Contact No.</th>
+                                <th>Email</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Akash</td>
+                                <td>8200125536</td>
+                                <td>akashnair@gmail.com</td>
+                            </tr>
+                            <tr>
+                                <td>Manish G</td>
+                                <td>8019267367</td>
+                                <td>golla.manish91@gmail.com</td>
+                            </tr>
+                            <tr>
+                                <td>Manish K</td>
+                                <td>8504826808</td>
+                                <td>manishdavidjones@gmail.com</td>
+                            </tr>
+                            <tr>
+                                <td>Raj Mahli</td>
+                                <td>8158035038</td>
+                                <td>rkmahli@gmail.com</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
 
                 <!-- Modal footer -->
