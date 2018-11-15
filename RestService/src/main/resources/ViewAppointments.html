@@ -121,7 +121,7 @@
     <!--  -->
     <!--  -->
     <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
-            <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+            <span style="font-size:30px;cursor:pointer;color:white;margin-right:10px;" onclick="openNav()">&#9776;</span>
         <a class="navbar-brand" href="CustomerHome.html">AMS</a>
 
         <ul class="navbar-nav">
@@ -149,15 +149,15 @@
             <h1 class="jumbotron-heading">Appointments</h1>
             <p>
                 <div class="btn-group" role="group">
-                    <a class="btn btn-primary my-2" role="button" onclick="upcoming()">Upcoming Appointments</a>
-                    <a class="btn btn-primary my-2" role="button" onclick="past()">Past Appointments</a>
+                    <a class="btn btn-primary my-2" role="button" onclick="upcoming()" id="b1">Upcoming Appointments</a>
+                    <a class="btn btn-primary my-2" role="button" onclick="past()" id="b2">Past Appointments</a>
                 </div>
             </p>
         </div>
     </section>
 
         <div class="container">
-            <div class="row" id="cardspace">
+            <div class="row" id="cardspace" style="min-height:8vw;">
 
             </div>
         </div>
@@ -168,7 +168,6 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title" id="alertmodaltitle">Alert</h4>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         <div class="modal-body" id="alertmodalbody">
@@ -283,71 +282,74 @@
 
 
 
-
-
-
-<!-- 
-<footer class="footer font-small blue pt-4" style="background-color: #6375A2;">
-
     
-    <div class="container-fluid text-center text-md-left">
+    <!-- Footer -->
+    <footer class="footer font-small blue pt-4" style="background-color: #6375A2;">
 
-    
-        <div class="row">
+        <!-- Footer Links -->
+        <div class="container-fluid text-center text-md-left">
 
-            
-            <div class="col-md-6 mt-md-0 mt-3">
+            <!-- Grid row -->
+            <div class="row">
 
-                
-                <h5 class="text-uppercase" style="color:white;">AMS</h5>
-                <p style="color:white;">Welcome to Agent Management System!</p>
+                <!-- Grid column -->
+                <div class="col-md-6 mt-md-0 mt-3">
+
+                    <!-- Content -->
+                    <h5 class="text-uppercase" style="color:white;">AMS</h5>
+                    <p style="color:white;">Welcome to Agent Management System!</p>
+
+                </div>
+                <!-- Grid column -->
+
+                <hr class="clearfix w-100 d-md-none pb-3">
+
+                <!-- Grid column -->
+                <div class="col-md-3 mb-md-0 mb-3">
+
+                   
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#aboutModal" style="color: white;">About AMS</button>
+                        </li>
+                    </ul>
+                    <p style="padding: 10px">A brief about this web application. <br>Click to know more!</p>
+
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-3 mb-md-0 mb-3">
+
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#contactModal" style="color: white;">Contact
+                                Us</button>
+                        </li>
+                    </ul>
+
+                    <p style="padding: 10px">Contact details of the creators of this<br> web application. Click here to show!</p>
+
+                </div>
+                <!-- Grid column -->
 
             </div>
-            
-
-            <hr class="clearfix w-100 d-md-none pb-3">
-
-            
-            <div class="col-md-3 mb-md-0 mb-3">
-
-                
-                <h5 class="text-uppercase" style="color:white;">Links</h5>
-
-                <ul class="list-unstyled">
-                    <li>
-                        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#aboutModal">About
-                            Us</button>
-                    </li>
-                </ul>
-
-            </div>
-            <div class="col-md-3 mb-md-0 mb-3">
-
-               
-                <h5 class="text-uppercase" style="color:white;">Links</h5>
-
-                <ul class="list-unstyled">
-                    <li>
-                        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#contactModal">Contact
-                            Us</button>
-                    </li>
-                </ul>
-
-            </div>
-           
+            <!-- Grid row -->
 
         </div>
-        
-    </div>
-     -->
-    
-    <!-- <div class="footer-copyright text-center py-3">© 2018 Copyright:
-        <a href="https://cognizant.com/"> Cognizant.com</a>
-    </div>
-    
+        <!-- Footer Links -->
 
-</footer> -->
-<!-- Footer -->
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2018 Copyright:
+            <a href="https://cognizant.com/" style="color: white;"> Cognizant.com</a>
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
+
 
 
 </body>

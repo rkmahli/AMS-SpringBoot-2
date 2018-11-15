@@ -36,7 +36,7 @@ function viewActive(){
             '<p class="card-text">Company: '+data.cname+'<br>Company E-Mail: '+data.cemail+'<br>Licence Registration Date: '+data.registrationdate+'</p>' +
             '<div class="d-flex justify-content-between align-items-center">' +
             '<div class="btn-group">' +
-            '<button type="button" class="btn btn-sm btn-outline-secondary" onclick="$(#policyModal).modal()">Details</button>' +
+            '<button type="button" class="btn btn-sm" onclick="$(#policyModal).modal()">Details</button>' +
             '</div>' +
             '<small class="text-muted">Expires On: '+data.expirydate+'</small>' +
             '</div>' +

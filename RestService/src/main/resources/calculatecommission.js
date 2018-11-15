@@ -59,8 +59,8 @@ function selectForm(){
 
 function allAgents(){
     $("#modalbody").empty();
-    var tHead='<table class="table table-dark table-hover">'+
-    '<thead>'+
+    var tHead='<table class="table table-light">'+
+    '<thead style="color:white;">'+
     '<tr>'+
     '<th>Agent ID</th>'+
     '<th>Agent Name</th>'+
@@ -68,7 +68,7 @@ function allAgents(){
     '<th>Total Commission</th>'+
     '</tr>'+
     '</thead>'+
-    '<tbody>';
+    '<tbody style="color:white;">';
 
     var tFoot='</tbody>'+
     '</table>';
@@ -76,12 +76,12 @@ function allAgents(){
 
     $.ajax({
         type: "GET",
-        url: "http://10.230.179.19:6844/admin/commission/" + $("#from").val() + "/" + $("#to").val(),
+        url: "http://localhost:6844/admin/commission/" + $("#from").val() + "/" + $("#to").val(),
         async: false,
         dataType: "json",
         success: function (data) {
             
-            var body;
+            var body='';
             for(i=0;i<data.length;i++){
                 body=body+'<tr><td>'+data[i].id+'</td><td>'+data[i].name+'</td><td>'+data[i].total+'</td><td>'+data[i].commission+'</td></tr>'
             }  
@@ -100,8 +100,8 @@ function allAgents(){
 
 function singleAgent(){
     $("#modalbody").empty();
-    var tHead='<table class="table table-dark table-hover">'+
-    '<thead>'+
+    var tHead='<table class="table table-hover">'+
+    '<thead style="color:white;">'+
     '<tr>'+
     '<th>Agent ID</th>'+
     '<th>Agent Name</th>'+
@@ -111,7 +111,7 @@ function singleAgent(){
     '<th>No. Of Policies Registered</th>'+
     '</tr>'+
     '</thead>'+
-    '<tbody>';
+    '<tbody style="color:white;">';
 
     var tFoot='</tbody>'+
     '</table>';
@@ -119,7 +119,7 @@ function singleAgent(){
 
     $.ajax({
         type: "GET",
-        url: "http://10.230.179.19:6844/admin/commission/"+ $("#agentid").val() +"/" + $("#from").val() + "/" + $("#to").val(),
+        url: "http://localhost:6844/admin/commission/"+ $("#agentid").val() +"/" + $("#from").val() + "/" + $("#to").val(),
         async: false,
         dataType: "json",
         success: function (data) {
@@ -138,7 +138,7 @@ function singleAgent(){
 function populateAgents(){
     $.ajax({
         type: "GET",
-        url: "http://10.230.179.19:6844/admin/agent",
+        url: "http://localhost:6844/admin/agent",
         async: false,
         dataType: "json",
         success: function (data) {

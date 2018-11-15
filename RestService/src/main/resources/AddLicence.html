@@ -32,7 +32,7 @@
     display: none; 
 }
 .footer {
-    position: fixed;
+    position: relative;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -154,7 +154,7 @@ body {
     <!--  -->
     <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
 
-        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+        <span style="font-size:30px;cursor:pointer;color:white;margin-right:10px;" onclick="openNav()">&#9776;</span>
 
         <a class="navbar-brand" href="AdminHome.html">AMS</a>
 
@@ -255,7 +255,6 @@ body {
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="alertmodaltitle">Alert</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body" id="alertmodalbody">
@@ -376,7 +375,7 @@ body {
 
 
     <!-- Footer -->
-    <footer class="page-footer font-small blue pt-4" style="background-color: #6375A2;">
+    <footer class="footer font-small blue pt-4" style="background-color: #6375A2;">
 
         <!-- Footer Links -->
         <div class="container-fluid text-center text-md-left">
@@ -399,15 +398,14 @@ body {
                 <!-- Grid column -->
                 <div class="col-md-3 mb-md-0 mb-3">
 
-                    <!-- Links -->
-                    <h5 class="text-uppercase" style="color:white;">Links</h5>
+                   
 
                     <ul class="list-unstyled">
                         <li>
-                            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#aboutModal">About
-                                Us</button>
+                            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#aboutModal" style="color: white;">About AMS</button>
                         </li>
                     </ul>
+                    <p style="padding: 10px">A brief about this web application. <br>Click to know more!</p>
 
                 </div>
                 <!-- Grid column -->
@@ -415,15 +413,15 @@ body {
                 <!-- Grid column -->
                 <div class="col-md-3 mb-md-0 mb-3">
 
-                    <!-- Links -->
-                    <h5 class="text-uppercase" style="color:white;">Links</h5>
 
                     <ul class="list-unstyled">
                         <li>
-                            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#contactModal">Contact
+                            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#contactModal" style="color: white;">Contact
                                 Us</button>
                         </li>
                     </ul>
+
+                    <p style="padding: 10px">Contact details of the creators of this<br> web application. Click here to show!</p>
 
                 </div>
                 <!-- Grid column -->
@@ -436,7 +434,7 @@ body {
 
         <!-- Copyright -->
         <div class="footer-copyright text-center py-3">© 2018 Copyright:
-            <a href="https://cognizant.com/"> Cognizant.com</a>
+            <a href="https://cognizant.com/" style="color: white;"> Cognizant.com</a>
         </div>
         <!-- Copyright -->
 

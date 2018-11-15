@@ -41,7 +41,7 @@ function init() {
     else {
         $.ajax({
             type: "GET",
-            url: "http://10.230.179.19:6844/customer/appointment/" + sessionStorage.getItem('custUser'),
+            url: "http://localhost:6844/customer/appointment/" + sessionStorage.getItem('custUser'),
             async: false,
             dataType: "json",
             success: function (data) { jArr = data; upcoming() },
@@ -58,6 +58,9 @@ function init() {
 }
 
 function upcoming() {
+
+    $("#b1").attr("class","btn btn-primary my-2 active");
+    $("#b2").attr("class","btn btn-primary my-2");
     $("#cardspace").empty();
     for (i = 0; i < jArr.length; i++) {
         var curDt = new Date();
@@ -68,7 +71,7 @@ function upcoming() {
                 '<div class="card-body">' +
                 '<h3 class="card-heading">Appointment Details</h3>' +
                 '<p class="card-text">'+
-                '<table class="table table-dark table-hover">'+
+                '<table class="table table-hover">'+
                 '<tr>'+
                 '<th>Agent ID</th>'+
                 '<td>'+ jArr[i].agent.id + '</td>'+
@@ -90,7 +93,7 @@ function upcoming() {
                 '</p>' +
                 '<div class="d-flex justify-content-between align-items-center">' +
                 '<small class="text-muted">' + jArr[i].date + '</small>' +
-                '<small class="text-muted">' + jArr[i].timeSlot + '</small>' +
+                '<small class="text-muted">' + jArr[i].timeSlot.replace(/_/g,' ') + '</small>' +
                 '</div>' +
                 '</div>' +
                 '</div>' +
@@ -101,6 +104,9 @@ function upcoming() {
 }
 
 function past() {
+
+    $("#b2").attr("class","btn btn-primary my-2 active");
+    $("#b1").attr("class","btn btn-primary my-2");
     $("#cardspace").empty();
     for (i = 0; i < jArr.length; i++) {
         var curDt = new Date();
@@ -111,7 +117,7 @@ function past() {
             '<div class="card-body">' +
             '<h3 class="card-heading">Appointment Details</h3>' +
             '<p class="card-text">'+
-            '<table class="table table-dark table-hover">'+
+            '<table class="table table-hover">'+
             '<tr>'+
             '<th>Agent ID</th>'+
             '<td>'+ jArr[i].agent.id + '</td>'+
@@ -133,7 +139,7 @@ function past() {
             '</p>' +
             '<div class="d-flex justify-content-between align-items-center">' +
             '<small class="text-muted">' + jArr[i].date + '</small>' +
-            '<small class="text-muted">' + jArr[i].timeSlot + '</small>' +
+            '<small class="text-muted">' + jArr[i].timeSlot.replace(/_/g,' ') + '</small>' +
             '</div>' +
             '</div>' +
             '</div>' +
