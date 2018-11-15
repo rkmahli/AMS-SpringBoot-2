@@ -2871,3 +2871,22 @@ org.eclipse.core.runtime.CoreException: Launch configuration RestServiceApplicat
 2018-11-15 05:29:04,565 [Worker-14: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
 2018-11-15 05:29:04,568 [Worker-14: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2018-11-15 05:29:04,569 [Worker-14: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\h p\Desktop\AMS-SpringBoot-2\RestService\src\test\resources
+2018-11-15 09:40:53,684 [Worker-6] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: AMS:DBTest:0.0.1-SNAPSHOT @ C:\Users\724447\Desktop\AMS-SpringBoot-2\DBTest\pom.xml.
+2018-11-15 09:41:04,224 [Worker-6] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.ams:RestService:0.0.1-SNAPSHOT @ C:\Users\724447\Desktop\AMS-SpringBoot-2\RestService\pom.xml.
+2018-11-15 09:41:35,984 [Worker-6] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /RestService/src/main/java
+2018-11-15 09:41:35,987 [Worker-6] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /RestService/src/main/resources
+2018-11-15 09:41:36,007 [Worker-6] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /RestService/src/main/resources
+2018-11-15 09:41:36,027 [Worker-6] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /RestService/src/test/java
+2018-11-15 09:41:38,013 [Worker-6] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /DBTest/src/main/java
+2018-11-15 09:41:38,013 [Worker-6] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /DBTest/src/main/resources
+2018-11-15 09:41:38,015 [Worker-6] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /DBTest/src/test/java
+2018-11-15 09:41:38,192 [Worker-6] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 2 project(s) in 56 sec
+2018-11-15 09:41:42,934 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-11-15 09:41:42,941 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-11-15 09:41:42,969 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-11-15 09:41:42,972 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\724447\Desktop\AMS-SpringBoot-2\DBTest\src\test\resources
+2018-11-15 09:41:47,111 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-15 09:41:47,118 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-11-15 09:41:47,157 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 393 resources
+2018-11-15 09:41:59,852 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-11-15 09:41:59,853 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\724447\Desktop\AMS-SpringBoot-2\RestService\src\test\resources

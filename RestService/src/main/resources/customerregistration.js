@@ -6,6 +6,7 @@ function validate() {
     $('[data-toggle="tooltip"]').removeAttr("data-toggle");
     validateName();
     validateAddress();
+    validateMark();
     validateCity();
     validateState();
     validateZip();
@@ -24,12 +25,7 @@ function validate() {
 
 function validateHeight() {
     var str = $("#height").val();
-    if (str == '') {
-        $("#height").attr("data-toggle", "tooltip");
-        $("#height").attr("title", "Mandatory");
-        flag = false;
-    }
-    else {
+    if (str != '') {
         var match = str.match("[0-9]+");
         var match2 = str.match("[0-9]+\\.[0-9]+");
         if (!(match != null && str == match[0])) {
@@ -44,12 +40,7 @@ function validateHeight() {
 
 function validateWeight() {
     var str = $("#weight").val();
-    if (str == '') {
-        $("#weight").attr("data-toggle", "tooltip");
-        $("#weight").attr("title", "Mandatory");
-        flag = false;
-    }
-    else {
+    if (str != '') {
         var match = str.match("[0-9]+");
         var match2 = str.match("[0-9]+\\.[0-9]+");
         if (!(match != null && str == match[0])) {
@@ -87,6 +78,17 @@ function validateAddress() {
         this.flag = false;
     }
 }
+
+
+function validateMark() {
+    var str = $("#mark").val();
+    if (str == '') {
+        $("#mark").attr("data-toggle", "tooltip");
+        $("#mark").attr("title", "Mandatory");
+        this.flag = false;
+    }
+}
+
 
 function validateCity() {
     var str = $("#city").val();
@@ -126,12 +128,7 @@ function validateZip() {
 
 function validatePremiums() {
     var str = $("#premiums").val();
-    if (str == '') {
-        $("#premiums").attr("data-toggle", "tooltip");
-        $("#premiums").attr("title", "Mandatory");
-        flag = false;
-    }
-    else {
+    if (str != '') {
         var match = str.match("[0-9]+");
         var match2 = str.match("[0-9]+\\.[0-9]+");
         if (!(match != null && str == match[0])) {
@@ -260,7 +257,7 @@ function validatePremiums() {
         var json = getJson();
         $.ajax({
             type: "POST",
-            url: "http://localhost:6844/customer/register",
+            url: "http://10.230.179.19:6844/customer/register",
             async: false,
             data: json,
             contentType: "application/json",
@@ -268,6 +265,8 @@ function validatePremiums() {
             success: function (data) {
 
                 $("#alertmodalbody").empty();
+                $("#alertmodalheader").empty();
+                $("#alertmodalheader").append('Success');
                 $("#alertmodalbody").append('Your login ID is ' + data);
                 $("#alertmodal").on("hidden.bs.modal", function () {
                     window.location = "Login.html";
@@ -277,6 +276,8 @@ function validatePremiums() {
             error: function () {
 
                 $("#alertmodalbody").empty();
+                $("#alertmodalheader").empty();
+                $("#alertmodalheader").append('Error');
                 $("#alertmodalbody").append('Server error, please try later.');
                 $("#alertmodal").modal('show');
             }

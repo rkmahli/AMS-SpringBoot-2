@@ -63,7 +63,7 @@ function store() {
         dataType: "text",
         success: function(data) {
             $("#alertmodalbody").empty(); 
-            $("#alertmodalbody").append('You appointment has been registered on ' + data); 
+            $("#alertmodalbody").append(data); 
             $("#alertmodal").on("hidden.bs.modal", function(){
                 window.location = "CustomerHome.html";
             });

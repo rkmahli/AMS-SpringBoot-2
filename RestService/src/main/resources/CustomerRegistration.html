@@ -84,28 +84,28 @@
 
             <div class="form-group">
 
-                <label for="name">Name</label>
+                <label for="name"><span style='color: red'>*</span>Name</label>
 
                 <input class="form-control" id="name" type="text" placeholder="Name">
             </div>
 
             <div class="form-group ">
 
-                <label for="address"> Address</label>
+                <label for="address"> <span style='color: red'>*</span>Address</label>
 
                 <textarea class="form-control" id="address" type="text" rows="3" placeholder="Address"></textarea>
 
             </div>
 
             <div class="form-group ">
-                <label for="city">City</label>
+                <label for="city"><span style='color: red'>*</span>City</label>
 
                 <input class="form-control" id="city" type="text">
 
             </div>
 
             <div class="form-group ">
-                <label for="state">State</label>
+                <label for="state"><span style='color: red'>*</span>State</label>
 
                 <input class="form-control" id="state" type="text">
 
@@ -113,7 +113,7 @@
 
             <div class="form-group ">
 
-                <label for="zipcode">Zip Code</label>
+                <label for="zipcode"><span style='color: red'>*</span>Zip Code</label>
 
                 <input class="form-control" id="zipcode" type="text">
 
@@ -121,7 +121,7 @@
 
             <div class="form-group ">
 
-                <label for="contactno">Contact No</label>
+                <label for="contactno"><span style='color: red'>*</span>Contact No</label>
 
                 <input class="form-control" id="contactno" type="text" placeholder="Enter your phone number">
 
@@ -129,7 +129,7 @@
 
             <div class="form-group ">
 
-                <label for="email">Email Id</label>
+                <label for="email"><span style='color: red'>*</span>Email Id</label>
 
                 <input class="form-control" id="email" type="text" name="" placeholder="Enter your email Id">
 
@@ -137,7 +137,7 @@
 
 
             <div class="form-group ">
-                <label for="dob">Date of Birth</label>
+                <label for="dob"><span style='color: red'>*</span>Date of Birth</label>
 
                 <input class="form-control" type="date" id="dob" placeholder="Date of Birth">
 
@@ -145,7 +145,7 @@
             </div>
 
             <div class="form-group ">
-                <label for="mark">Identification Mark</label>
+                <label for="mark"><span style='color: red'>*</span>Identification Mark</label>
 
                 <input class="form-control" id="mark" type="text">
 
@@ -177,7 +177,7 @@
 
             <div class="form-group ">
 
-                <label for="income">Annual Income</label>
+                <label for="income"><span style='color: red'>*</span>Annual Income</label>
 
                 <input class="form-control" type="text" id="income" placeholder="Enter income">
 
@@ -185,7 +185,7 @@
 
             <div class="form-group ">
 
-                <label for="password">Create Pasword</label>
+                <label for="password"><span style='color: red'>*</span>Create Pasword</label>
 
                 <input class="form-control" type="password" id="password" placeholder="Create password">
 
@@ -214,6 +214,7 @@
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header">
+                <h1 id="alertmodalheader"></h1>
               <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body" id="alertmodalbody">

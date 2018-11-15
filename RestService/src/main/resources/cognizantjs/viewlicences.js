@@ -26,6 +26,9 @@ function init() {
 }
 
     function active() {
+
+        $("#b1").attr("class","btn btn-primary my-2 active");
+        $("#b2").attr("class","btn btn-primary my-2");
         $("#cardspace").empty();
         for (i = 0; i < jArr.length; i++) {
             var curDt = new Date();
@@ -36,7 +39,7 @@ function init() {
                     '<p class="card-text">Company: ' + jArr[i].companyName + '<br>Company E-Mail: ' + jArr[i].companyEMail + '<br>Licence Registration Date: ' + jArr[i].licenceRegistryDate + '</p>' +
                     '<div class="d-flex justify-content-between align-items-center">' +
                     '<div class="btn-group">' +
-                    '<button type="button" class="btn btn-sm btn-outline-secondary" onclick="policyDetails(\'' + jArr[i].id + '\')">Details</button>' +
+                    '<button type="button" class="btn btn-sm btn-info" onclick="policyDetails(\'' + jArr[i].id + '\')">Details</button>' +
                     '</div>' +
                     '<small class="text-muted">Expires On: ' + jArr[i].licenceExpiryDate + '</small>' +
                     '</div>' +
@@ -49,6 +52,9 @@ function init() {
     }
 
     function expired() {
+
+        $("#b2").attr("class","btn btn-primary my-2 active");
+        $("#b1").attr("class","btn btn-primary my-2");
         $("#cardspace").empty();
         for (i = 0; i < jArr.length; i++) {
             var curDt = new Date();
@@ -60,8 +66,8 @@ function init() {
                     '<div class="d-flex justify-content-between align-items-center">' +
                     '<div class="btn-group">' +
                     '<div class="btn-group">' +
-                    '<button type="button" class="btn btn-sm btn-outline-secondary" onclick="policyDetails(\'' + jArr[i].id + '\')">Details</button>' +
-                    '<button type="button" class="btn btn-sm btn-outline-secondary" onclick="renew(\'' + jArr[i].id + '\')">Renew</button>' +
+                    '<button type="button" class="btn btn-sm btn-info" onclick="policyDetails(\'' + jArr[i].id + '\')">Details</button>' +
+                    '<button type="button" class="btn btn-sm btn-success" onclick="renew(\'' + jArr[i].id + '\')">Renew</button>' +
                     '</div>' +
                     '</div>' +
                     '<small class="text-muted">Expired On: ' + jArr[i].licenceExpiryDate + '</small>' +
@@ -82,7 +88,7 @@ function init() {
     function policyDetails(polId) {
 
         $("#modalbody").empty();
-        var tHead = '<table class="table table-dark table-hover">' +
+        var tHead = '<table class="table table-hover">' +
             '<thead>' +
             '</thead>' +
             '<tbody>';
@@ -92,7 +98,7 @@ function init() {
 
         $.ajax({
             type: "GET",
-            url: "http://10.230.179.19:6844/admin/policy/" + polId,
+            url: "http://localhost:6844/admin/policy/" + polId,
             async: false,
             dataType: "json",
             success: function (data) {
@@ -126,7 +132,7 @@ function init() {
     function renew(polId) {
 
         $("#modalbody").empty();
-        var tHead = '<table class="table table-dark table-hover">' +
+        var tHead = '<table class="table table-hover">' +
             '<thead>' +
             '</thead>' +
             '<tbody>';
@@ -160,7 +166,7 @@ function init() {
                     '<input class="form-control" type="date" id="exp" disabled required>' +
                     '</td></tr>'
 
-                var subbtn = '<a class="btn btn-outline-dark" onclick="renewLicence(\'' + data.id + '\',$(\'#exp\').val())">Renew</a>';
+                var subbtn = '<a class="btn btn-success" onclick="renewLicence(\'' + data.id + '\',$(\'#exp\').val())">Renew</a>';
 
                 var table = tHead + body + tFoot + subbtn;
 
@@ -190,7 +196,7 @@ function init() {
 
         $.ajax({
             type: "GET",
-            url: "http://10.230.179.19:6844/admin/policy/" + id,
+            url: "http://localhost:6844/admin/policy/" + id,
             async: false,
             dataType: "json",
             success: function (data) {
