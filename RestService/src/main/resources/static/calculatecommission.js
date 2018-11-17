@@ -38,7 +38,7 @@ function init() {
     if (sessionStorage.getItem('adminUser') === null) {
         alert('Unauthorized Access');
         localStorage.clear();
-        window.location = 'Login.html';
+        window.location = 'Login';
     }
     $("#formspace").append(allform);
 }
@@ -156,7 +156,7 @@ function populateAgents(){
 
 function logout(){
     sessionStorage.clear();
-    window.location="Login.html";
+    window.location="Login";
 }
 
 var singleform ='<form onsubmit="return singleAgent()">'+

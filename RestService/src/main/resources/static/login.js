@@ -39,12 +39,12 @@ function getPassword() {
     if (str.substr(0, 2) == 'CU') {
         url = url + 'customer' + '/password/' + $("#inputEmail").val();
         str3='custUser';
-        str4='CustomerHome.html';
+        str4='CustomerHome';
     }
     else if (str.substr(0, 2) == 'AD') {
         url = url + 'admin' + '/password/' + $("#inputEmail").val();
         str3='adminUser';
-        str4='AdminHome.html';
+        str4='AdminHome';
     }
     $.ajax({
         type: "GET",

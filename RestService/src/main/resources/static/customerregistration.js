@@ -269,7 +269,7 @@ function validatePremiums() {
                 $("#alertmodalheader").append('Success');
                 $("#alertmodalbody").append('Your login ID is ' + data);
                 $("#alertmodal").on("hidden.bs.modal", function () {
-                    window.location = "Login.html";
+                    window.location = "Login";
                 });
                 $("#alertmodal").modal('show');
             },

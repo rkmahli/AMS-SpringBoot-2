@@ -36,7 +36,7 @@ function init() {
     if (sessionStorage.getItem('custUser') === null) {
         alert('Unauthorized Access');
         localStorage.clear();
-        window.location = 'Login.html';
+        window.location = 'Login';
     }
     else {
         $.ajax({
@@ -49,7 +49,7 @@ function init() {
                 $("#alertmodalbody").empty(); 
                 $("#alertmodalbody").append('No appointments to show.');
                 $("#alertmodal").on("hidden.bs.modal", function(){
-                    window.location = "CustomerHome.html";
+                    window.location = "CustomerHome";
                 });
                 $("#alertmodal").modal('show');
             }
@@ -151,5 +151,5 @@ function past() {
 
 function logout(){
     sessionStorage.clear();
-    window.location="Login.html";
+    window.location="Login";
 }

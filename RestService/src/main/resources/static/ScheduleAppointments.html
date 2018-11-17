@@ -1,220 +1,184 @@
 <!DOCTYPE html>
-
 <html manifest="manifest.appcache">
 
 <head>
-    <title>Customer Registration</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Schedule Appointment</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
         crossorigin="anonymous"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" media="all" href="node_modules/bootstrap/dist/css/Slate.css" />
-    <script src="customerregistration.js"></script>
+    <script src="scheduleappointments.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
     <style>
+
         ::-webkit-scrollbar { 
     display: none; 
 }
 
-.footer-div {
-            height: 5vh;
-            padding: 0;
-            margin: 0;
 
-
-
-        }
-
-        .table {
-            height: 5vh;
-            background-color: rgb(161, 161, 161);
-            border: 1px;
-            color: blanchedalmond;
-            padding: 0;
-            margin: 0;
-
-        }
-        .table1{
-            color: #111;
-            width: 100vw;
-            border :2px;
-            margin: 0%;
-            background-color:rgb(161,161,161);
-        }
         label {
             cursor: default;
             color:#000000
         }
-        h1 {
+        h3 {
             cursor: default;
             color:#000000
         }
-
-        body{
-            background: url("./Images/all.jpg");
-            background-repeat: repeat;
-            background-attachment: fixed;
-            background-size: cover;
-            
-        }
-
         </style>
+
+<style>
+
+    
+        body {
+            font-family: "Lato", sans-serif;
+            transition: background-color .5s;
+            background:url("./Images/all.jpg");
+            background-size: cover;
+        }
+        
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 30px;
+        }
+        
+        .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 20px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+        
+        .sidenav img {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 20px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+        
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+        
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+        
+        #main {
+            transition: margin-left .5s;
+            padding: 16px;
+        }
+        
+        @media screen and (max-height: 450px) {
+          .sidenav {padding-top: 15px;}
+          .sidenav a {font-size: 18px;}
+        }
+        </style>
+
+</head>
 </head>
 
-
-<body>
+<body onload="init()">
+    <!-- vertical nvabarcode starts here -->
+<!--  -->
+<!--  -->
+<div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <img src="./Images/log.png" height="100">
+        <a fontsize=11 href="ViewAppointments"><i class="fas fa-search"></i> View Appointments</a>
+        <a href="ScheduleAppointments"><i class="fas fa-user-plus"></i> Schedule Appointment</a>
+    </div>
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "320px";
+            document.getElementById("main").style.marginLeft = "320px";
+    
+        }
+        
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft= "0";
+            
+        }
+        </script>
+    <!-- script ends here -->
+    <!--  -->
+    <!--  -->
     <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
-        <a class="navbar-brand" href="HomePage.html">AMS</a>
+            <span style="font-size:30px;cursor:pointer;color:white;margin-right:10px;" onclick="openNav()">&#9776;</span>
+        <a class="navbar-brand" href="CustomerHome">AMS</a>
 
         <ul class="navbar-nav">
                 <li class="nav-item active">
-                        <a class="nav-link" href="#">Customer Registration</a>
+                        <a class="nav-link" href="#">Schedule Appointment</a>
                       </li>
               </ul>
+        <!-- <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="CustomerHome">View Appointments</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Schedule Appointment</a>
+            </li>
+        </ul> -->
+        <ul class="navbar-nav ml-auto">
+            <a class="btn btn-info" onclick="logout()">Logout</a>
+        </ul>
     </nav>
 
-    <div class="container jumbotron bg-light col-6 mt-5" class="container jumbotron bg-light col-6 mt-5">
-        <center>
-            <h1>Customer Registration</h1>
-        </center>
-        <hr>
-        <form id="customerform" onsubmit="return validate()" action="#">
 
+    <div class="container jumbotron bg-light  col-6 mt-5">
+        <center>
+            <h3>Schedule Appointment</h3>
+        </center>
+        <hr/>
+                <form id="appointmentform" onsubmit=" return validate()" action="#">
 
             <div class="form-group">
-
-                <label for="name"><span style='color: red'>*</span>Name</label>
-
-                <input class="form-control" id="name" type="text" placeholder="Name">
+                <label><span style='color: red'>*</span>Date Of Appointment</label>
+                <input type="date" class="form-control" id="doa" placeholder="Enter agent address">
             </div>
 
-            <div class="form-group ">
-
-                <label for="address"> <span style='color: red'>*</span>Address</label>
-
-                <textarea class="form-control" id="address" type="text" rows="3" placeholder="Address"></textarea>
-
-            </div>
-
-            <div class="form-group ">
-                <label for="city"><span style='color: red'>*</span>City</label>
-
-                <input class="form-control" id="city" type="text">
-
-            </div>
-
-            <div class="form-group ">
-                <label for="state"><span style='color: red'>*</span>State</label>
-
-                <input class="form-control" id="state" type="text">
-
-            </div>
-
-            <div class="form-group ">
-
-                <label for="zipcode"><span style='color: red'>*</span>Zip Code</label>
-
-                <input class="form-control" id="zipcode" type="text">
-
-            </div>
-
-            <div class="form-group ">
-
-                <label for="contactno"><span style='color: red'>*</span>Contact No</label>
-
-                <input class="form-control" id="contactno" type="text" placeholder="Enter your phone number">
-
-            </div>
-
-            <div class="form-group ">
-
-                <label for="email"><span style='color: red'>*</span>Email Id</label>
-
-                <input class="form-control" id="email" type="text" name="" placeholder="Enter your email Id">
-
-            </div>
-
-
-            <div class="form-group ">
-                <label for="dob"><span style='color: red'>*</span>Date of Birth</label>
-
-                <input class="form-control" type="date" id="dob" placeholder="Date of Birth">
-
-
-            </div>
-
-            <div class="form-group ">
-                <label for="mark"><span style='color: red'>*</span>Identification Mark</label>
-
-                <input class="form-control" id="mark" type="text">
-
-            </div>
-
-            <div class="form-group ">
-
-                <label for="height">Height</label>
-
-                <input class="form-control" id="height" type="text" name="" placeholder="Enter your height in (mts.) ">
-
-            </div>
-
-            <div class="form-group ">
-
-                <label for="weight">Weight</label>
-
-                <input class="form-control" id="weight" type="text" name="" placeholder="Your Weight in (kgs.)">
-
-            </div>
-
-
-
-            <div class="form-group ">
-
-                <label for="premiums">Current Yearly Insurane Premiums</label>
-                <input class="form-control" id="premiums" type="text" name="" placeholder="Current Yearly Insurane Premiums">
-            </div>
-
-            <div class="form-group ">
-
-                <label for="income"><span style='color: red'>*</span>Annual Income</label>
-
-                <input class="form-control" type="text" id="income" placeholder="Enter income">
-
-            </div>
-
-            <div class="form-group ">
-
-                <label for="password"><span style='color: red'>*</span>Create Pasword</label>
-
-                <input class="form-control" type="password" id="password" placeholder="Create password">
-
-            </div>
+            <label><span style='color: red'>*</span>Preffered Time</label>
+            <select class="custom-select" id="slot">
+                <option value="8_AM_-_12_PM">Morning (8 AM - 12 PM)</option>
+                <option value="12_PM_-_4_PM">Afternoon (12 AM - 4 PM)</option>
+                <option value="4_PM_-_8_PM">Evening (4 PM - 8 PM)</option>
+            </select>
 
             <hr>
-            <div class="form-group ">
-                <center>
-                    <button type="submit" class="btn btn-primary col-6">Register</button>
-                    <button class="btn  col-5" id="reset" type="reset" value="Reset">Reset</button>
-                </center>
-            </div>
+            <center>
+                <button type="submit" class="btn btn-primary col-5">Submit</button>
+                <button type="reset" class="btn  col-5">Reset</button>
+            </center>
         </form>
 
-
-
-
     </div>
-
-
-
-    
-
 
     <div class="modal" id="alertmodal">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header">
-                <h1 id="alertmodalheader"></h1>
               <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body" id="alertmodalbody">
@@ -397,6 +361,7 @@
 
     </footer>
     <!-- Footer -->
+
 
 </body>
 

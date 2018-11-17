@@ -4,7 +4,7 @@ function init() {
     if (sessionStorage.getItem('adminUser') === null) {
         alert('Unauthorized Access');
         localStorage.clear();
-        window.location = 'Login.html';
+        window.location = 'Login';
     }
     else {
         $.ajax({
@@ -17,7 +17,7 @@ function init() {
                 $("#alertmodalbody").empty();
                 $("#alertmodalbody").append('No policy records could be found');
                 $("#alertmodal").on("hidden.bs.modal", function () {
-                    window.location = "AdminHome.html";
+                    window.location = "AdminHome";
                 });
                 $("#alertmodal").modal("show");
             }
@@ -82,7 +82,7 @@ function init() {
 
     function logout() {
         sessionStorage.clear();
-        window.location = "Login.html";
+        window.location = "Login";
     }
 
     function policyDetails(polId) {
@@ -214,7 +214,7 @@ function init() {
                         $("#alertmodalbody").empty();
                         $("#alertmodalbody").append('The Licence has been renewed.'); 
                         $("#alertmodal").on("hidden.bs.modal", function () {
-                        window.location = "ViewLicences.html";
+                        window.location = "ViewLicences";
                     });
                     $("#alertmodal").modal("show"); 
                 },
@@ -229,7 +229,7 @@ function init() {
                 $("#alertmodalbody").empty();
                 $("#alertmodalbody").append('No policy record could be found'); 
                 $("#alertmodal").on("hidden.bs.modal", function () {
-                    window.location = "ViewLicences.html";
+                    window.location = "ViewLicences";
                 });
                 $("#alertmodal").modal("show");
             }

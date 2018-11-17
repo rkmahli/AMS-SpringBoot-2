@@ -127,7 +127,7 @@ function store() {
             $("#alertmodalbody").empty();
             $("#alertmodalbody").append('The registration was successful for : ' + data);
             $("#alertmodal").on("hidden.bs.modal", function () {
-                window.location = "AdminHome.html"
+                window.location = "AdminHome"
             });
             $("#alertmodal").modal('show');
         },
@@ -143,7 +143,7 @@ function init() {
     if (sessionStorage.getItem('adminUser') === null) {
         alert('Unauthorized Access');
         localStorage.clear();
-        window.location = 'Login.html';
+        window.location = 'Login';
     }
     populateCustomers();
     populatePolicies();
@@ -208,5 +208,5 @@ function populatePolicies() {
 }
 function logout() {
     sessionStorage.clear();
-    window.location = "Login.html";
+    window.location = "Login";
 }

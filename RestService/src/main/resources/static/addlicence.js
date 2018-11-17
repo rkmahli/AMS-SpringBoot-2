@@ -160,7 +160,7 @@ function validateDor() {
             $("#alertmodalbody").empty();
             $("#alertmodalbody").append('Licence for Policy ID '+data+' has been registered successfully!');
             $("#alertmodal").on("hidden.bs.modal", function () {
-                window.location.href="AdminHome.html";
+                window.location.href="AdminHome";
             });
             $("#alertmodal").modal('show');
         }, 
@@ -176,11 +176,11 @@ function validateDor() {
         if (sessionStorage.getItem('adminUser') === null) {
             alert('Unauthorized Access');
             localStorage.clear();
-            window.location = 'Login.html';
+            window.location = 'Login';
         }
     }
 
 function logout(){
     sessionStorage.clear();
-    window.location="Login.html";
+    window.location="Login";
 }

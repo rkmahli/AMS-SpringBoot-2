@@ -1,164 +1,220 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html manifest="manifest.appcache">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <title>Manage Licences</title>
-
-    <!-- Bootstrap core CSS -->
+    <title>Customer Registration</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
         crossorigin="anonymous"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" media="all" href="node_modules/bootstrap/dist/css/Slate.css" />
-    <script src="managelicences.js"></script>
-    <!-- Custom styles for this template -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-
+    <script src="customerregistration.js"></script>
 
     <style>
-
-
         ::-webkit-scrollbar { 
     display: none; 
 }
 
-    
-            body {
-                font-family: "Lato", sans-serif;
-                transition: background-color .5s;
-                background: url(./images/all.jpg);
-                background-attachment: fixed;
-                background-size: cover;
-            }
-            .sidenav {
-                height: 100%;
-                width: 0;
-                position: fixed;
-                z-index: 1;
-                top: 0;
-                left: 0;
-                background-color: #111;
-                overflow-x: hidden;
-                transition: 0.5s;
-                padding-top: 30px;
-            }
-            .footer{
-            position: fixed;
-            bottom: 0;  
-            width:100%;         
-            }
-            .footer-div {
-            position: fixed;
-            height: 3vh;
+.footer-div {
+            height: 5vh;
             padding: 0;
             margin: 0;
-                   }
-            .sidenav a {
-                padding: 8px 8px 8px 32px;
-                text-decoration: none;
-                font-size: 20px;
-                color: #818181;
-                display: block;
-                transition: 0.3s;
-            }
+
+
+
+        }
+
+        .table {
+            height: 5vh;
+            background-color: rgb(161, 161, 161);
+            border: 1px;
+            color: blanchedalmond;
+            padding: 0;
+            margin: 0;
+
+        }
+        .table1{
+            color: #111;
+            width: 100vw;
+            border :2px;
+            margin: 0%;
+            background-color:rgb(161,161,161);
+        }
+        label {
+            cursor: default;
+            color:#000000
+        }
+        h1 {
+            cursor: default;
+            color:#000000
+        }
+
+        body{
+            background: url("./Images/all.jpg");
+            background-repeat: repeat;
+            background-attachment: fixed;
+            background-size: cover;
             
-            .sidenav img {
-                padding: 8px 8px 8px 32px;
-                text-decoration: none;
-                font-size: 20px;
-                color: #818181;
-                display: block;
-                transition: 0.3s;
-            }
-            
-            .sidenav a:hover {
-                color: #f1f1f1;
-            }
-            
-            .sidenav .closebtn {
-                position: absolute;
-                top: 0;
-                right: 25px;
-                font-size: 36px;
-                margin-left: 50px;
-            }
-            
-            #main {
-                transition: margin-left .5s;
-                padding: 16px;
-            }
-            
-            @media screen and (max-height: 450px) {
-              .sidenav {padding-top: 15px;}
-              .sidenav a {font-size: 18px;}
-            }
-            </style>
+        }
+
+        </style>
 </head>
 
-<body onload="init()">
- <!-- vertical nvabarcode starts here -->
-<!--  -->
-<!--  -->
-<div id="mySidenav" class="sidenav">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <img src="./Images/log.png" height="100">
-    <a fontsize=11 href="AgentRegistration.html"> <i class="fas fa-user"></i> Agent Registration</a>
-    <a href="CalculateCommission.html"><i class="fas fa-money-bill"></i> Calculate Commission</a>
-    <a href="MangeLicences.html"><i class="fas fa-wrench"></i> Manage Licences</a>
-    <a href="CustomerPolicyRegistration.html"><i class="fas fa-scroll"></i> Customer Policy Registration</a>
-</div>
-    <script>
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "320px";
-            document.getElementById("main").style.marginLeft = "320px";
-    
-        }
-        
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-            document.getElementById("main").style.marginLeft= "0";
-            
-        }
-        </script>
-    <!-- script ends here -->
-    <!--  -->
-    <!--  -->
+
+<body>
     <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
-            <span style="font-size:30px;cursor:pointer;color:white;margin-right:10px;" onclick="openNav()">&#9776;</span>
-        <a class="navbar-brand" href="AdminHome.html">AMS</a>
-<ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="MangeLicences.html">Manage Licences</a>
-      </li>
-    </ul>
-    <ul class="navbar-nav ml-auto">
-            <button type="button" class="btn btn-info" onclick="logout()">Logout</button>
-    </ul>
+        <a class="navbar-brand" href="/">AMS</a>
+
+        <ul class="navbar-nav">
+                <li class="nav-item active">
+                        <a class="nav-link" href="#">Customer Registration</a>
+                      </li>
+              </ul>
     </nav>
 
+    <div class="container jumbotron bg-light col-6 mt-5" class="container jumbotron bg-light col-6 mt-5">
+        <center>
+            <h1>Customer Registration</h1>
+        </center>
+        <hr>
+        <form id="customerform" onsubmit="return validate()" action="#">
 
-    <main role="main">
 
-        <section class="jumbotron text-center" id="jumbot">
-            <div class="container">
-                <h1 class="jumbotron-heading">Policy Licence Tools</h1>
-                <p>
-                    <div class="btn-group" role="group">
-                        <a class="btn btn-primary my-2" href="ViewLicences.html">View Policies</a>
-                        <a class="btn btn-primary my-2" href="AddLicence.html">Add Policy</a>
-                    </div>
-                </p>
+            <div class="form-group">
+
+                <label for="name"><span style='color: red'>*</span>Name</label>
+
+                <input class="form-control" id="name" type="text" placeholder="Name">
             </div>
-        </section>
-    </main>
-   
+
+            <div class="form-group ">
+
+                <label for="address"> <span style='color: red'>*</span>Address</label>
+
+                <textarea class="form-control" id="address" type="text" rows="3" placeholder="Address"></textarea>
+
+            </div>
+
+            <div class="form-group ">
+                <label for="city"><span style='color: red'>*</span>City</label>
+
+                <input class="form-control" id="city" type="text">
+
+            </div>
+
+            <div class="form-group ">
+                <label for="state"><span style='color: red'>*</span>State</label>
+
+                <input class="form-control" id="state" type="text">
+
+            </div>
+
+            <div class="form-group ">
+
+                <label for="zipcode"><span style='color: red'>*</span>Zip Code</label>
+
+                <input class="form-control" id="zipcode" type="text">
+
+            </div>
+
+            <div class="form-group ">
+
+                <label for="contactno"><span style='color: red'>*</span>Contact No</label>
+
+                <input class="form-control" id="contactno" type="text" placeholder="Enter your phone number">
+
+            </div>
+
+            <div class="form-group ">
+
+                <label for="email"><span style='color: red'>*</span>Email Id</label>
+
+                <input class="form-control" id="email" type="text" name="" placeholder="Enter your email Id">
+
+            </div>
+
+
+            <div class="form-group ">
+                <label for="dob"><span style='color: red'>*</span>Date of Birth</label>
+
+                <input class="form-control" type="date" id="dob" placeholder="Date of Birth">
+
+
+            </div>
+
+            <div class="form-group ">
+                <label for="mark"><span style='color: red'>*</span>Identification Mark</label>
+
+                <input class="form-control" id="mark" type="text">
+
+            </div>
+
+            <div class="form-group ">
+
+                <label for="height">Height</label>
+
+                <input class="form-control" id="height" type="text" name="" placeholder="Enter your height in (mts.) ">
+
+            </div>
+
+            <div class="form-group ">
+
+                <label for="weight">Weight</label>
+
+                <input class="form-control" id="weight" type="text" name="" placeholder="Your Weight in (kgs.)">
+
+            </div>
+
+
+
+            <div class="form-group ">
+
+                <label for="premiums">Current Yearly Insurane Premiums</label>
+                <input class="form-control" id="premiums" type="text" name="" placeholder="Current Yearly Insurane Premiums">
+            </div>
+
+            <div class="form-group ">
+
+                <label for="income"><span style='color: red'>*</span>Annual Income</label>
+
+                <input class="form-control" type="text" id="income" placeholder="Enter income">
+
+            </div>
+
+            <div class="form-group ">
+
+                <label for="password"><span style='color: red'>*</span>Create Pasword</label>
+
+                <input class="form-control" type="password" id="password" placeholder="Create password">
+
+            </div>
+
+            <hr>
+            <div class="form-group ">
+                <center>
+                    <button type="submit" class="btn btn-primary col-6">Register</button>
+                    <button class="btn  col-5" id="reset" type="reset" value="Reset">Reset</button>
+                </center>
+            </div>
+        </form>
+
+
+
+
+    </div>
+
+
+
+    
+
+
     <div class="modal" id="alertmodal">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header">
+                <h1 id="alertmodalheader"></h1>
               <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body" id="alertmodalbody">
@@ -169,7 +225,6 @@
           </div>
         </div>
       </div>
-    </div>
 
 
 
@@ -177,7 +232,7 @@
 
 
 
-    <div class="modal" id="aboutModal">
+      <div class="modal" id="aboutModal">
         <div class="modal-dialog">
             <div class="modal-content">
 
@@ -277,10 +332,6 @@
 
 
     <!-- Footer -->
-    
-    <!-- Footer -->
-</body>
-    <!-- Footer -->
     <footer class="footer font-small blue pt-4" style="background-color: #6375A2;">
 
         <!-- Footer Links -->
@@ -347,5 +398,6 @@
     </footer>
     <!-- Footer -->
 
-</footer>
+</body>
+
 </html>

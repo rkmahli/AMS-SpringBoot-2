@@ -65,7 +65,7 @@ function store() {
             $("#alertmodalbody").empty(); 
             $("#alertmodalbody").append(data); 
             $("#alertmodal").on("hidden.bs.modal", function(){
-                window.location = "CustomerHome.html";
+                window.location = "CustomerHome";
             });
             $("#alertmodal").modal('show');
     },
@@ -80,11 +80,11 @@ function store() {
 function init() {
     if (sessionStorage.getItem('custUser') === null) {
         alert('Unauthorized Access');
-        window.location = 'Login.html';
+        window.location = 'Login';
     }
 }
 
 function logout(){
     sessionStorage.clear();
-    window.location="Login.html";
+    window.location="Login";
 }
