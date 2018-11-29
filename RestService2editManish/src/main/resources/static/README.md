@@ -1,2 +1,0 @@
-# AMS
-Agent Management System
